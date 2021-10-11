@@ -1,0 +1,41 @@
+@import '../assets/variables/variables.scss';
+
+.navBar{
+    width: 70%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    .logo{
+        align-self: center;
+    }
+    nav{
+        width: 60%;
+        ul{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            li{
+                padding: 10px;
+                a{
+                    padding: 10px;
+                    color: $font-color;
+                    text-decoration: none;
+                    transition: .3s;
+                    border: 1px solid $border-color;
+                    border-radius: 3px;
+                    &:hover{
+                        background: $font-color;
+                        color: $back-black;
+                        border: 1px solid $font-color;
+                        transition: .3s;
+                    }
+                }
+            }
+        }
+    }
+}
