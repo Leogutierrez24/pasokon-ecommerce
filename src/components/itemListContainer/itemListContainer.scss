@@ -1,0 +1,13 @@
+@import '../assets/variables/variables.scss';
+
+.items-container{
+    width: 100%;
+    height: 100vh;
+    background: $font-color;
+}
+
+.hero-title{
+    margin: 0;
+    padding: 30px;
+    text-align: center;
+}

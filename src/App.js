@@ -1,5 +1,6 @@
 import './scss/App.scss'
 import NavBar from './components/navBar/NavBar';
+import ItemListContainer from './components/itemListContainer/ItemListContainer';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <header className="App-header">
         <NavBar />
       </header>
+      <ItemListContainer saludo='Bienvenido a Pasokon'/>
     </div>
   );
 }
