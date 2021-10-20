@@ -35,19 +35,4 @@
     }
 }
 
-.add-btn{
-    width: 76%;
-    min-width: 136px;
-    height: 25px;
-    background: $boton-color;
-    align-self: center;
-    font-family: $text-font;
-    border: 1px solid transparent;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: .2s;
-    &:hover{
-        box-shadow: 0 0 4px 2px $shadow-color;
-        transition: .2s;
-    }
-}
+@import '../assets/variables/add-button'
