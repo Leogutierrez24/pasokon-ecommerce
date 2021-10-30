@@ -1,5 +1,12 @@
 @import '../components/assets/variables/variables';
 
+* {
+    box-sizing: border-box;
+}
+.App{
+    background: $font-color;
+    height: 100%;
+}
 .App-header{
     padding: 10px 50px;
     background: $back-black;

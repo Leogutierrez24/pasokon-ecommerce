@@ -2,11 +2,12 @@
 
 .navBar{
     width: 100%;
-    height: 50px;
+    height: 70px;
+    background: $back-black;
     display: flex;
     justify-content: space-between;
     .logo{
-        align-self: center;
+        width: 70px;
     }
     nav{
         width: 60%;

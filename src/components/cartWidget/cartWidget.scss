@@ -2,22 +2,22 @@
 
 .cart-container{
     width: 50px;
-    height: 50px;
-    border: 1px solid $border-color;
-    border-radius: 3px;
     display: flex;
-    transition: .3s;
-    &:hover{
-        background: $font-color;
-        border-radius: 25%;
-        transition: .3s;
-    }
+    align-items: center;
     a{
-        width: 100%;
-        display: inherit;
-        justify-content: center;
-        img{
-            width: 40px;
+        width: fit-content;
+        padding: 3px 2px 0 2px;
+        border: 1px solid $border-color;
+        border-radius: 3px;
+        transition: .3s;
+        &:hover{
+            background: $font-color;
+            border-radius: 25%;
+            transition: .3s;
         }
     }
+}
+
+.cart-logo{
+    width: 45px;
 }

@@ -1,0 +1,94 @@
+@import "../assets/variables/variables";
+
+.itemDetail-container{
+    width: 60%;
+    height: fit-content;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    display: grid;
+    grid-template-areas: "imagen detail" "description description";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 400px 300px;
+}
+
+.image-container{
+    padding: 0 10px;
+    grid-area: imagen;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    img{
+        width: 300px;
+        height: 300px;
+        border: 1px solid $font-color;
+    }
+}
+
+.images-container{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inherit;
+}
+
+.secondary-img{
+    width: 60px;
+    height: 60px;
+    margin-right: 50px;
+    border: 1px solid $font-color;
+}
+
+.detail-container{
+    padding: 0 10px;
+    grid-area: detail;
+}
+
+.title-container{
+    height: 30%;
+}
+
+.detail-title{
+    margin: 0;
+    font-family: $title-font;
+    font-size: 1.9rem;
+    letter-spacing: .07rem;
+}
+
+.pay-container{
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-price{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $blue-color;
+}
+
+.payments-container{
+    display: flex;
+    align-items: center;
+}
+
+.payments{
+    width: 190px;
+}
+
+.cuotas{
+    padding-left: 20px;
+    font-size: 1.3rem;
+    color: $orange-color;
+}
+
+.detail-description{
+    width: fit-content;
+}
+
+.description{
+    padding: 20px 10px 0 10px;
+    grid-area: description;
+}
