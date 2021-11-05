@@ -33,7 +33,7 @@ function ItemDetail({ detail }) {
             </div>
             <div className="description">
                 <div className="detail-descriptionContainer">
-                    <span className="detail-descriptionTitle">Descripcion:</span>
+                    <span className="detail-descriptionTitle">Descripcion</span>
                     <p className="detail-description">{detail.description}</p>
                 </div>                
             </div>

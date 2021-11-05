@@ -1,0 +1,21 @@
+@import '../assets/variables/variables';
+
+.footer-container{
+    width: 100%;
+    padding: 30px;
+    background: $back-black;
+}
+
+@mixin footer-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.contact-list{
+    @include footer-list;
+}
+
+.menu-list{
+    @include footer-list;
+}

@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NavBar from './components/navBar/NavBar';
 import ItemListContainer from './components/itemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/category/:categoryId" component={ItemListContainer} />
           <Route exact path="/item/:itemId" component={ItemDetailContainer} />
         </Switch>
+      <Footer />
       </div>
     </BrowserRouter>
   );

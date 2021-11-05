@@ -1,0 +1,21 @@
+@import '../assets/variables/variables.scss';
+
+.banner-container{
+    width: 100%;
+    height: 350px;
+    padding: 100px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#11192cb3)), url(../assets/images/hero-banner.jfif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    box-shadow: 0 6px 4px 2px $shadow-color-dark;
+}
+
+.banner-title{
+    margin: 0;
+    text-align: center;
+    font-family: $title-font;
+    font-size: 2.5rem;
+    letter-spacing: .2rem;
+    color: #fff;
+}
