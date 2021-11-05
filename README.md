@@ -5,12 +5,15 @@ Pasokon es un e-commerce dedicado a la venta de productos de electronica, partic
 ## Contenido
 
 Por el momento el e-commerce cuenta con: 
+
     * Una barra de navegación con las respectiva categorias de productos
+    
     * Productos de prueba con cuentan con un detalle particular para cada uno
 
 ## Dependencias
 
 Uso de React Router Dom para la navegación.
+
 Uso de Sass para dar estilos
 
 ## Funcionamiento 
