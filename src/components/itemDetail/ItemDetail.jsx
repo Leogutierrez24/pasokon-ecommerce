@@ -1,12 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react';
 import './itemDetail.scss'
 import payments from '../assets/images/payments-img.jpg'
 import ItemCount from '../itemCount/ItemCount';
+import { AddModal } from '../addModal/AddModal';
 
 function ItemDetail({ detail }) {
+    const [toAdd, setToAdd] = useState(0);
+    const [modal, setModal] = useState(false);
+
     const handleCount = (contador) => {
-        alert(`Agregaste: ${contador}`);
+        setToAdd(toAdd + contador);
+        setModal(true);
     }
+
+    const closeModal = () => {
+        setModal(false);
+    }
+
+    // useEffect(() => {
+    // }, []);
+
+    console.log(toAdd);
+
     return (
         <div className="itemDetail-container">
             <div className="image-container">
@@ -28,7 +43,7 @@ function ItemDetail({ detail }) {
                         <img src={payments} alt="tarjetas" className="payments" />
                         <span className="cuotas">¡Hasta 12 cuotas!</span>
                     </div>
-                    <ItemCount stock={3} initial={1} onAdd={handleCount}/>
+                    <ItemCount stock={3} initial={1} onAdd={handleCount} />
                 </div>
             </div>
             <div className="description">
@@ -37,6 +52,9 @@ function ItemDetail({ detail }) {
                     <p className="detail-description">{detail.description}</p>
                 </div>                
             </div>
+            {(modal)
+                ? <AddModal closeModal={closeModal} title={"¡Agregado al carrito con éxito!"} /> : null}
+            
         </div>
     )
 }
