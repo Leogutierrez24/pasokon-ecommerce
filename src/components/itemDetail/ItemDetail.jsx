@@ -3,24 +3,25 @@ import './itemDetail.scss'
 import payments from '../assets/images/payments-img.jpg'
 import ItemCount from '../itemCount/ItemCount';
 import { AddModal } from '../addModal/AddModal';
+import { useCart } from "../context/cartContext";
 
 function ItemDetail({ detail }) {
     const [toAdd, setToAdd] = useState(0);
     const [modal, setModal] = useState(false);
+    const { addToCart } = useCart();
 
     const handleCount = (contador) => {
         setToAdd(toAdd + contador);
         setModal(true);
     }
 
+    if(modal){
+        addToCart(detail, toAdd);
+    }
+
     const closeModal = () => {
         setModal(false);
     }
-
-    // useEffect(() => {
-    // }, []);
-
-    console.log(toAdd);
 
     return (
         <div className="itemDetail-container">
@@ -53,7 +54,7 @@ function ItemDetail({ detail }) {
                 </div>                
             </div>
             {(modal)
-                ? <AddModal closeModal={closeModal} title={"¡Agregado al carrito con éxito!"} /> : null}
+                ? <AddModal closeModal={closeModal} title={`Agregaste ${detail.title} al carrito.`} /> : null}
             
         </div>
     )

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import './item.scss'
 
 function Item({productos}) {
-    console.log(productos)
     return (
         <div key={productos.id} className="item-container">
             <Link to={productos.adress} className="item-img-link"><img src={productos.pictureUrl} alt="" className="item-img" /></Link>

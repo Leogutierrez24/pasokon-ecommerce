@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './itemCount.scss'
 
-function ItemCount({stock, initial, onAdd}) {
+function ItemCount({stock, initial, onAdd }) {
     const [contador, setContador] = useState(initial);
 
     const handleRemove = () => {
@@ -25,11 +25,11 @@ function ItemCount({stock, initial, onAdd}) {
     return (
         <div className="item-counter">
             <div className="moreLess-btns">
-                <button onClick={(handleRemove)} className="less-btn">-</button>
+                <button onClick={handleRemove} className="less-btn">-</button>
                 <span className="counter">{contador}</span>
-                <button onClick={(handleAdd)} className="more-btn">+</button>
+                <button onClick={handleAdd} className="more-btn">+</button>
             </div>
-            <button onClick={(handleOnAdd)} className="add-btn detail">Agregar al carrito</button>
+            <button onClick={handleOnAdd} className="add-btn detail">Agregar al carrito</button>
         </div>
     )
 }
