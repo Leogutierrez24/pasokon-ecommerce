@@ -9,6 +9,9 @@ export const CartProvider = ({ children }) => {
 
     const addToCart = (product, quantity) => {
         product["cantidad"] = quantity;
+        const itemPrice = product.price * product.cantidad;
+        console.log(itemPrice)
+        product["finalPrice"] = itemPrice;
         const checkProduct = cart.find((item) => item.id === product.id);
         if(checkProduct){
             console.log("volviste a agregar el mismo producto");
@@ -18,8 +21,19 @@ export const CartProvider = ({ children }) => {
         }
     }
 
+    const subPrice = cart.reduce((a, c) => a + c.finalPrice, 0);
+
+    const totalPrice = subPrice;
+
+    const removeFromCart = (productId) => {
+        const removeProduct = cart.filter((product) => product.id !== productId);
+        setCart(removeProduct);
+    }
+
+    const itemsInCart = cart.reduce((a, c) => a + c.cantidad, 0);
+
     return(
-        <CartContext.Provider value={{ cart, addToCart }}>
+        <CartContext.Provider value={{ cart, addToCart, subPrice, totalPrice, itemsInCart, removeFromCart }}>
             {children}
         </CartContext.Provider>
     )
