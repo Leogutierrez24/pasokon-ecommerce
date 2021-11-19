@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-import products from '../data/products';
+// import products from '../data/products';
 import ItemList from '../itemList/ItemList';
 import Banner from '../banner/Banner';
 import Loader from '../loader/Loader';
+import { getFirestore } from '../firebase';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 import './itemListContainer.scss';
 
 
@@ -14,24 +16,37 @@ function ItemListContainer(props) {
     const { saludo } = props;
     
     useEffect( () => {
-        const printItems = new Promise ((resolve, reject) => {
-            let i = true;
-            if(i){
-                setLoading(true);
-                setTimeout(() => {
-                    resolve(products);
-                    setLoading(false);
-                }, 2000);
-            } else {
-                reject(console.log('algo salio mal'));
-            }
+        // const printItems = new Promise ((resolve, reject) => {
+        //     let i = true;
+        //     if(i){
+        //         setLoading(true);
+        //         setTimeout(() => {
+        //             resolve(products);
+        //             setLoading(false);
+        //         }, 2000);
+        //     } else {
+        //         reject(console.log('algo salio mal'));
+        //     }
+        // });
+        const db = getFirestore();
+        const q = categoryId ? query(collection(db, 'items'), where('category', '==', categoryId)) : collection(db, 'items');
+        getDocs(q).then((snapshot) => {
+            setLoading(true);
+            setTimeout(() => {
+                setItemList(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+                setLoading(false);
+            }, 2000)
         });
 
-        if(categoryId === undefined){
-            printItems.then((resp) => setItemList(resp));
-        } else {
-            printItems.then(resp => setItemList(resp.filter(i => i.category === categoryId)));
-        }
+        // getDocs(collection(db, 'items'))
+        // .then((snapshot) => {
+        //     setLoading(true);
+        //     setTimeout(() => {
+        //         setItemList(snapshot.docs.map((doc) => doc.data()));
+        //         setLoading(false);
+        //     }, 2000)
+        // });
+
     }, [categoryId]);
 
     return (

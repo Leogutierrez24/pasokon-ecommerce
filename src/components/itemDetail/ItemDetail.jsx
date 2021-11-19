@@ -27,7 +27,7 @@ function ItemDetail({ detail }) {
         <div className="itemDetail-container">
             <div className="image-container">
                 <div className="primary-img">
-                    <img src={detail.pictureUrl} alt="producto" />
+                    <img src={detail.imgUrl} alt="producto" />
                 </div>
                 <ul className="images-container">
                     <li className="secondary-img"></li>
@@ -36,7 +36,7 @@ function ItemDetail({ detail }) {
             </div>
             <div className="detail-container">
                 <div className="title-container">
-                    <h3 className="detail-title">{detail.title}</h3>
+                    <h3 className="detail-title">{detail.name}</h3>
                 </div>
                 <div className="pay-container">
                     <span className="detail-price">{detail.price}</span>
@@ -54,7 +54,7 @@ function ItemDetail({ detail }) {
                 </div>                
             </div>
             {(modal)
-                ? <AddModal closeModal={closeModal} title={`Agregaste ${detail.title} al carrito.`} /> : null}
+                ? <AddModal closeModal={closeModal} title={`Agregaste ${detail.name} al carrito.`} /> : null}
             
         </div>
     )
