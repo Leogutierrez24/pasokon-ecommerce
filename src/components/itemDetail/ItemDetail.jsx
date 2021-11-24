@@ -39,7 +39,7 @@ function ItemDetail({ detail }) {
                     <h3 className="detail-title">{detail.name}</h3>
                 </div>
                 <div className="pay-container">
-                    <span className="detail-price">{detail.price}</span>
+                    <span className="detail-price">$ {detail.price}</span>
                     <div className="payments-container">
                         <img src={payments} alt="tarjetas" className="payments" />
                         <span className="cuotas">¡Hasta 12 cuotas!</span>

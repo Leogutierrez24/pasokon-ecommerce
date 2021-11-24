@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCart } from "../context/cartContext";
+import { Link } from 'react-router-dom';
 import './cart.scss';
 
 function Cart() {
@@ -21,8 +22,8 @@ function Cart() {
                                     <tbody className="table-body">
                                         <tr className="product-detail" key={product.id}>
                                             <td className="product-title">
-                                                <img className="product-img" src={product.pictureUrl} alt="imagen del producto" />
-                                                <span className="product-name">{product.title}</span>
+                                                <img className="product-img" src={product.imgUrl} alt="imagen del producto" />
+                                                <span className="product-name">{product.name}</span>
                                             </td>
                                             <td className="product-price">
                                                 <span>$ {product.price}</span>
@@ -50,6 +51,7 @@ function Cart() {
                     <span className="subtotal-price">Subtotal: $ {subPrice}</span>
                     <span className="total-price">Total: $ {totalPrice}</span>
                 </div>
+                <Link to="/checkout">terminar compra</Link>
             </div>
     </div>
     )

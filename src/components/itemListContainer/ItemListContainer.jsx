@@ -33,7 +33,7 @@ function ItemListContainer(props) {
         getDocs(q).then((snapshot) => {
             setLoading(true);
             setTimeout(() => {
-                setItemList(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+                setItemList(snapshot.docs.map((doc) => doc.data()));
                 setLoading(false);
             }, 2000)
         });
@@ -48,6 +48,8 @@ function ItemListContainer(props) {
         // });
 
     }, [categoryId]);
+
+    // console.log(itemList)
 
     return (
         <div className="items-container">

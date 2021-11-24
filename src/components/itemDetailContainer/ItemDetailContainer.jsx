@@ -4,7 +4,7 @@ import { useParams } from 'react-router';
 import ItemDetail from '../itemDetail/ItemDetail';
 import Loader from '../loader/Loader';
 import { getFirestore } from '../firebase';
-import { doc, getDoc } from 'firebase/firestore';
+import {collection, where, query, getDocs } from 'firebase/firestore';
 
 function ItemDetailContainer() {
     const [getDetails, setGetDetails] = useState([]);
@@ -33,22 +33,17 @@ function ItemDetailContainer() {
         //     .then((resp) => setGetDetails(resp.filter(i => i.id === itemId)));
         // }
 
-    const db = getFirestore();
-
-    const itemRef = doc(db, 'items', itemId);
-    console.log(itemRef)
-    getDoc(itemRef).then((snapshot) => {
-        if(snapshot.exists()){
+        const db = getFirestore();
+        const q = itemId ? query(collection(db, 'items'), where('id', '==', itemId)) : null;
+        getDocs(q).then((snapshot) => {
+            console.log(snapshot)
             setLoading(true);
             setTimeout(() => {
-                setGetDetails(snapshot.data());
-                setLoading(false)
+                setGetDetails(snapshot.docs.map((doc) => doc.data()));
+                setLoading(false);
             }, 2000)
-        }
-    });
-}, [itemId]);
-
-
+        });
+    }, [itemId]);
     return (
         <div className="itemDetail">
             {

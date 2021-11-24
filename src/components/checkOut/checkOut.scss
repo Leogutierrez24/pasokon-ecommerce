@@ -1,0 +1,33 @@
+.checkout {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.checkout-container {
+    width: 90%;
+    padding: 30px;
+    display: flex;
+}
+
+.user-info {
+    width: 50%;
+}
+
+.cart-resume {
+    width: 50%;
+}
+
+.user-form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    input {
+        height: 30px;
+        margin-bottom: 15px;
+    }
+}
+
+#purchase-btn {
+    width: 130px;
+}
