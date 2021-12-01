@@ -3,11 +3,12 @@
 * {
     box-sizing: border-box;
 }
-.App{
-    background: $font-color;
-    height: 100%;
+
+body {
+    margin: 0;
 }
-.App-header{
-    padding: 10px 50px;
-    background: $back-black;
+
+.App {
+    height: 100%;
+    background: $body-color;
 }

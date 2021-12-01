@@ -21,12 +21,10 @@ function Footer() {
                     <div className="menu-links">
                         <p>Menu:</p>
                         <ul className="menu-list">
-                            <li className="menu-items"><Link exact to="/">Inicio</Link></li>
+                            <li className="menu-items"><Link to="/">Inicio</Link></li>
                             <li className="menu-items"><Link to="/category/componentes">Componentes</Link></li>
                             <li className="menu-items"><Link to="/category/pc-armadas">PC Armadas</Link></li>
-                            <li className="menu-items"><Link>Mi Cuenta</Link></li>
                         </ul>
-                        <Link></Link>
                     </div>
                 </div>
             </div>

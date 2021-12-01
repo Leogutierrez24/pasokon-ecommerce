@@ -6,12 +6,32 @@ import logo from '../assets/images/logo.png';
 function NavBar() {
     return (
         <div className="navBar">
-            <Link exact to="/"><img src={logo} alt="logo" className="logo" /></Link>
+            <Link to="/"><img src={logo} alt="logo" className="logo" /></Link>
             <nav>
-                <ul>
-                    <li><Link to="/category/componentes">Componentes</Link></li>
-                    <li><Link to="/category/pc-armadas">PC armadas</Link></li>
-                    <li><Link to="/#">Mi Cuenta</Link></li>
+                <ul className="navBar-list">
+                    <li className="navBar-items">
+                        <Link to="/category/componentes">Componentes</Link>
+                        <div className="components">
+                            <div className="content-padding"></div>
+                            <ul className="components-content">
+                                <li className="components-item">Mouse</li>
+                                <li className="components-item">Placas de video</li>
+                                <li className="components-item">Procesadores</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li className="navBar-items">
+                        <Link to="/category/pc-armadas">PC armadas</Link>
+                        <div className="components">
+                            <div className="content-padding"></div>
+                            <ul className="components-content">
+                                <li className="components-item">PC Work</li>
+                                <li className="components-item">PC Gaming</li>
+                                <li className="components-item">PC Ultra</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li className="navBar-items"><Link to="/#">Mi Cuenta</Link></li>
                 </ul>
             </nav>
             <CartWidget />

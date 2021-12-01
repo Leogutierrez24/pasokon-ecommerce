@@ -6,11 +6,16 @@
     height: 300px;
     padding: 10px;
     background: #fff;
+    border: 1px solid $item-border-color;
     border-radius: 2px;
-    box-shadow: 0 3px 4px 1px $shadow-color-dark;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: .3s;
+    &:hover {
+        box-shadow: 0 0 4px 2px $shadow-color;
+        transition: .3s;
+    }
 }
 
 .item-img-link{
@@ -36,7 +41,7 @@
     text-decoration: none;
     font-size: 1.3rem;
     letter-spacing: .4px;
-    color: $back-black;
+    color: $dark-color;
     &:hover{
         color: $blue-color;
     }

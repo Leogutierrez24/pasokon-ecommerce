@@ -10,7 +10,6 @@ function Item({productos}) {
                 <Link to={`/item/${productos.id}`} className="item-title">{productos.name}</Link>
                 <div className="item-price-container">
                     <p className="item-price"><span>Precio</span> $ {productos.price}</p>
-                    <button className="add-btn2"><span>Agregar al carrito</span></button>
                 </div>
             </div>
         </div>
