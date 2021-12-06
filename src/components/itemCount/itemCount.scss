@@ -2,7 +2,6 @@
 
 .item-counter{
     width: 200px;
-    height: 90px;
     background: #fff;
     display: flex;
     flex-direction: column;
@@ -31,7 +30,7 @@
     transition: .2s;
     &:hover{
         box-shadow: 0 2px 4px 1px $shadow-color-dark; 
-        background: $blue-color-dark;   
+        background: $blue-color-light;   
         transition: .2s;
     }
 }
@@ -50,7 +49,7 @@
     transition: .2s;
     &:hover{
         box-shadow: 0 2px 4px 1px $shadow-color-dark;
-        background: $blue-color-dark;
+        background: $blue-color-light;
         transition: .2s;
     }
 }

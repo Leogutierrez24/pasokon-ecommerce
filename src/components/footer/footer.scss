@@ -4,12 +4,34 @@
     width: 100%;
     padding: 30px;
     background: $dark-color;
+    font-family: $text-font;
+    color: $font-color;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-content {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
 }
 
 @mixin footer-list{
     margin: 0;
     padding: 0;
     list-style: none;
+    li {
+        margin-bottom: 3px;
+    }
+}
+
+.contact-info, .menu-links {
+    p {
+        width: fit-content;
+        margin: 0 0 10px 0;
+        font-size: 1.1rem;
+        border-bottom: 1px solid $font-color;
+    }
 }
 
 .contact-list{
@@ -18,4 +40,18 @@
 
 .menu-list{
     @include footer-list;
+}
+
+.contact-item {
+    span {
+        font-weight: 600;
+        letter-spacing: .03rem;
+    }
+}
+
+.menu-list {
+    a {
+        color: $font-color;
+        text-decoration: none;
+    }
 }

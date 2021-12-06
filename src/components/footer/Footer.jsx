@@ -6,16 +6,14 @@ function Footer() {
     return (
         <footer>
             <div className="footer-container">
-                <div className="footer-container-left"></div>
-                <div className="footer-container-center"></div>
-                <div className="footer-container-right">
+                <div className="footer-content">
                     <div className="contact-info">
                         <p>Contactanos</p>
                         <ul className="contact-list">
                             <li className="contact-item"><span>Teléfono: </span>KL5-3226</li>
                             <li className="contact-item"><span>Mail: </span>info@pasokon.com.ar</li>
                             <li className="contact-item"><span>Soporte: </span>ayuda@pasokon.com.ar</li>
-                            <li className="contact-item"><span>Horario de atención: lunes a viernes de 10 a 19 hrs / sabados de 10 a 16 hrs</span></li>
+                            <li className="contact-item"><span>Horario de atención: </span>lunes a viernes de 10 a 19 hrs / sabados de 10 a 16 hrs</li>
                         </ul>
                     </div>
                     <div className="menu-links">

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import Cart from '../cart/Cart';
 import { useCart } from '../context/cartContext';
+import oops from '../assets/images/cart-empty.svg';
 
 function CartContainer() {
     const { cart } = useCart();
@@ -11,8 +12,9 @@ function CartContainer() {
           {
               !(cart.length === 0)
                 ? <Cart />
-                :   <div>
-                        <h3>No hay productos en el carrito</h3>
+                :   <div className="cart-empty">
+                        <img src={oops} alt="carro vacío" className="oops-icon" />
+                        <h3 className="empty-text">Oops! parece que tu carrito esta vacío</h3>
                         <Link exact to="/" className="btn-return">Volver</Link>
                     </div>
           }  
