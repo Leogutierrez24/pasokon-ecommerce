@@ -8,7 +8,11 @@ Por el momento el e-commerce cuenta con:
 
     * Una barra de navegación con las respectiva categorias de productos
     
-    * Productos de prueba con cuentan con un detalle particular para cada uno
+    * Productos con detalles
+
+    * Carro de compra con sus fincionalidades
+
+    * Formulario de checkout para finalizar la compra
 
 ## Dependencias
 
@@ -16,8 +20,10 @@ Uso de React Router Dom para la navegación.
 
 Uso de Sass para dar estilos
 
-## Funcionamiento 
-![gif](https://media.giphy.com/media/wuOqnHwXHAIvX94gFx/giphy.gif)
+React-Slideshow
+
+Firebase
+
 
 ## Autor
 
