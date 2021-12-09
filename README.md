@@ -2,17 +2,8 @@
 
 Pasokon es un e-commerce dedicado a la venta de productos de electronica, particularmente informática.
 
-## Contenido
-
-Por el momento el e-commerce cuenta con: 
-
-    * Una barra de navegación con las respectiva categorias de productos
-    
-    * Productos con detalles
-
-    * Carro de compra con sus fincionalidades
-
-    * Formulario de checkout para finalizar la compra
+## Funcionamiento 
+![gif](https://media.giphy.com/media/ekEmkJmJ01LRTYESAu/giphy.gif)
 
 ## Dependencias
 
