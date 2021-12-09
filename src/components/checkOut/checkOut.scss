@@ -1,5 +1,8 @@
+@import '../assets/variables/variables';
+
 .checkout {
     width: 100%;
+    height: 80vh;
     display: flex;
     justify-content: center;
 }
@@ -8,13 +11,10 @@
     width: 90%;
     padding: 30px;
     display: flex;
+    justify-content: center;
 }
 
 .user-info {
-    width: 50%;
-}
-
-.cart-resume {
     width: 50%;
 }
 
@@ -25,9 +25,73 @@
     input {
         height: 30px;
         margin-bottom: 15px;
+        padding: 5px;
+        font-family: $text-font;
+        border: none;
+        outline: none;
+        transition: .3s;
+        &:focus {
+            box-shadow: 0 0 4px 2px $shadow-color;
+            transition: .3s;
+        }
     }
 }
 
 #purchase-btn {
-    width: 130px;
+    width: 170px;
+    height: 40px;
+    padding: 0;
+    background: $blue-color;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    &:hover {
+        background: $blue-color-light;
+        transition: 0.3s;
+    }
+}
+
+.final-item {
+    padding-bottom: 10px;
+}
+
+.total-price {
+    font-weight: 700;
+    display: block;
+}
+
+.back-link {
+    text-decoration: none;
+    position: relative;
+    color: $blue-color;
+    span {
+        padding-left: 20px;
+    }
+}
+
+.bi {
+    position: absolute;
+}
+
+.successfull {
+    width: 50%;
+    height: fit-content;
+    margin-top: 30px;
+    padding: 20px;
+    font-family: $text-font;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    a {
+        color: $blue-color;
+        text-decoration: none;        
+    }
 }

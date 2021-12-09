@@ -1,19 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router';
+import React, {useEffect, useState} from 'react';
 import ItemList from '../itemList/ItemList';
 import Loader from '../loader/Loader';
 import { getFirestore } from '../firebase';
 import { collection, query, where, getDocs } from 'firebase/firestore';
-import './itemListContainer.scss';
 
-function ItemListContainer() {
+const BestSellerContainer = () => {
     const [itemList, setItemList] = useState([]);
     const [loading, setLoading] = useState(false);
-    const { categoryId } = useParams();
-    
-    useEffect( () => {
+
+    useEffect(() => {
         const db = getFirestore();
-        const q = categoryId ? query(collection(db, 'items'), where('category', '==', categoryId)) : collection(db, 'items');
+        const q = query(collection(db, 'items'), where('subcategory', '==', 'best-seller'));
         getDocs(q).then((snapshot) => {
             setLoading(true);
             setTimeout(() => {
@@ -21,16 +18,16 @@ function ItemListContainer() {
                 setLoading(false);
             }, 2000)
         });
-    }, [categoryId]);
+    }, []);
     return (
-        <div className="items-container">
+        <>
             {
                 (loading === false)
                     ? <ItemList items={itemList} />
                     : <Loader />
             }
-        </div>
+        </>
     );
 }
 
-export default ItemListContainer
+export default BestSellerContainer;

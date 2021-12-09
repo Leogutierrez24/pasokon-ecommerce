@@ -13,8 +13,8 @@ export const AddModal = ({ closeModal, title }) => {
                     <span className="modal-title">{title}</span>
                 </div>
                 <div className="modal-footer">
-                    <Link exact to="/"><button className="modal-btn">Seguir comprando</button></Link>
-                    <Link exact to="/cart"><button className="modal-btn">Terminar compra</button></Link>
+                    <Link to="/"><button className="modal-btn">Seguir comprando</button></Link>
+                    <Link to="/cart"><button className="modal-btn">Terminar compra</button></Link>
                 </div>
             </div>
         </div>

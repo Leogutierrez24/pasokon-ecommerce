@@ -15,7 +15,7 @@ function CartContainer() {
                 :   <div className="cart-empty">
                         <img src={oops} alt="carro vacío" className="oops-icon" />
                         <h3 className="empty-text">Oops! parece que tu carrito esta vacío</h3>
-                        <Link exact to="/" className="btn-return">Volver</Link>
+                        <Link to="/all" className="btn-return">Volver</Link>
                     </div>
           }  
         </div>

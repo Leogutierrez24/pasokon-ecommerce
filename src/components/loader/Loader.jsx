@@ -4,7 +4,7 @@ import './loader.scss';
 function Loader() {
     return (
         <>
-          <span className="loader-msg">cargando...</span>  
+          <span className="loader-msg"></span>  
         </>
     )
 }

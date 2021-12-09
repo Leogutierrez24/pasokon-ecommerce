@@ -10,14 +10,10 @@ export const CartProvider = ({ children }) => {
     const addToCart = (product, quantity) => {
         product["cantidad"] = quantity;
         const itemPrice = product.price * product.cantidad;
-        console.log(itemPrice)
         product["finalPrice"] = itemPrice;
         const checkProduct = cart.find((item) => item.id === product.id);
-        if(checkProduct){
-            console.log("volviste a agregar el mismo producto");
-        } else {
+        if(!checkProduct){
             setCart([...cart, product]);
-            console.log("agregaste un nuevo producto al carrito");
         }
     }
 

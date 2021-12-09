@@ -10,7 +10,7 @@ function Item({productos}) {
                 <img src={productos.imgUrl} alt="" className="item-img" />
             </div>
             <div className="item-data">
-                <Link to={`/item/${productos.id}`} className="item-title">{productos.name}</Link>
+                <p className="item-title">{productos.name}</p>
                 <div className="item-price-container">
                     <p className="item-price"><span>Precio</span> ${productos.price}</p>
                 </div>

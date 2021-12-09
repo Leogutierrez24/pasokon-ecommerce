@@ -20,8 +20,8 @@ function Footer() {
                         <p>Menu:</p>
                         <ul className="menu-list">
                             <li className="menu-items"><Link to="/">Inicio</Link></li>
-                            <li className="menu-items"><Link to="/category/componentes">Componentes</Link></li>
-                            <li className="menu-items"><Link to="/category/pc-armadas">PC Armadas</Link></li>
+                            <li className="menu-items"><Link to="/all">Productos</Link></li>
+                            <li className="menu-items"><Link to="/cart">Mi Carrito</Link></li>
                         </ul>
                     </div>
                 </div>

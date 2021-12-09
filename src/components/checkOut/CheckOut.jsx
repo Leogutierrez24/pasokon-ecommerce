@@ -7,10 +7,10 @@ import './checkOut.scss';
 
 function CheckOut() {
     const { cart, totalPrice, clearCart } = useCart();
-    const [inputName, setInputName] = useState();
-    const [inputSurname, setInputSurname] = useState();
-    const [inputTel, setInputTel] = useState();
-    const [inputEmail, setInputEmail] = useState();
+    const [inputName, setInputName] = useState('');
+    const [inputSurname, setInputSurname] = useState('');
+    const [inputTel, setInputTel] = useState('');
+    const [inputEmail, setInputEmail] = useState('');
     const [orderComplete, setOrderComplete] = useState();
 
     const handleInputName = (e) => {
@@ -27,6 +27,14 @@ function CheckOut() {
 
     const handleInputEmail = (e) => {
         setInputEmail(e.target.value);
+    }
+
+    const buttonDisabled = () => {
+        if(inputName === "" || inputSurname === "" || inputEmail === "" || inputTel === ""){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     const handleSubmit = (e) => {
@@ -47,9 +55,7 @@ function CheckOut() {
         addDoc(ordersCollection, order)
         .then(({ id }) => setOrderComplete(id))
         .catch(console.log('ocurrio un error'));
-        console.log(order);
     }
-
 
     return (
         <div className="checkout">
@@ -86,22 +92,28 @@ function CheckOut() {
                                         value={inputEmail}
                                         onChange={handleInputEmail}
                                     />
-                                    <button onClick={(e) => handleSubmit(e)} id="purchase-btn">Realizar Pedido</button>
+                                    <button disabled={buttonDisabled()} onClick={(e) => handleSubmit(e)} id="purchase-btn">Realizar Pedido</button>
                                 </form>
                             </div>
                             <div className="cart-resume">
                                 {
-                                    cart.map((item) => <div key={item.id}>
+                                    cart.map((item) => <div key={item.id} className="final-item">
                                         <span>{item.name} x {item.cantidad} ${item.price}</span>
                                     </div>)
                                 }
-                                <span>Total: ${totalPrice}</span>
+                                <span className="total-price">Total: ${totalPrice}</span>
+                                <Link to="/cart" className="back-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
+                                        <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                                    </svg>
+                                    <span>Volver</span>
+                                </Link>
                             </div>
                         </div>
-                    : <div>
-                        <h3>¡Compra realizada con existo!</h3>
+                    : <div className="successfull">
+                        <h3>¡Compra realizada con exito!</h3>
                         <p>El código de tu compra es: {orderComplete}</p>
-                        <Link to="/" onClick={clearCart} >Pagar</Link>
+                        <Link to="/" onClick={clearCart}>Pagar</Link>
                     </div>
             }
         </div>

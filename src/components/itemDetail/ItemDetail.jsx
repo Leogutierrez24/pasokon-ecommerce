@@ -4,6 +4,7 @@ import payments from '../assets/images/payments-img.jpg'
 import ItemCount from '../itemCount/ItemCount';
 import { AddModal } from '../addModal/AddModal';
 import { useCart } from "../context/cartContext";
+import { useEffect } from 'react/cjs/react.development';
 
 function ItemDetail({ detail }) {
     const [toAdd, setToAdd] = useState(0);
@@ -15,9 +16,11 @@ function ItemDetail({ detail }) {
         setModal(true);
     }
 
-    if(modal){
-        addToCart(detail, toAdd);
-    }
+    useEffect(() => {
+        if(modal){
+            addToCart(detail, toAdd);
+        }
+    });
 
     const closeModal = () => {
         setModal(false);
@@ -29,10 +32,6 @@ function ItemDetail({ detail }) {
                 <div className="primary-img">
                     <img src={detail.imgUrl} alt="producto" />
                 </div>
-                <ul className="images-container">
-                    <li className="secondary-img"></li>
-                    <li className="secondary-img"></li>
-                </ul>
             </div>
             <div className="detail-container">
                 <div className="title-container">

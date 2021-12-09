@@ -10,28 +10,20 @@ function NavBar() {
             <nav>
                 <ul className="navBar-list">
                     <li className="navBar-items">
-                        <Link to="/category/componentes">Componentes</Link>
-                        <div className="components">
+                        <span className="main-links">Componentes</span>
+                        <div className="submenu">
                             <div className="content-padding"></div>
-                            <ul className="components-content">
-                                <li className="components-item">Mouse</li>
-                                <li className="components-item">Placas de video</li>
-                                <li className="components-item">Procesadores</li>
+                            <ul className="submenu-list">
+                                <li className="submenu-item"><Link to="/category/mouses" className="sub-links">Mouse</Link></li>
+                                <li className="submenu-item"><Link to="/category/gpus" className="sub-links">Placas de video</Link></li>
+                                <li className="submenu-item"><Link to="/category/procesadores" className="sub-links">Procesadores</Link></li>
                             </ul>
                         </div>
                     </li>
                     <li className="navBar-items">
-                        <Link to="/category/pc-armadas">PC armadas</Link>
-                        <div className="components">
-                            <div className="content-padding"></div>
-                            <ul className="components-content">
-                                <li className="components-item">PC Work</li>
-                                <li className="components-item">PC Gaming</li>
-                                <li className="components-item">PC Ultra</li>
-                            </ul>
-                        </div>
+                        <Link to="/category/pc-armadas" className="main-links">PC armadas</Link>
                     </li>
-                    <li className="navBar-items"><Link to="/#">Mi Cuenta</Link></li>
+                    <li className="navBar-items"><Link to="/all" className="main-links">Ver todo</Link></li>
                 </ul>
             </nav>
             <CartWidget />
