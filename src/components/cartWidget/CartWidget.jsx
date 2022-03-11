@@ -15,7 +15,7 @@ function CartWidget() {
                 <span className={!(cart.length === 0) ? 'cartWidget-qty visible' : 'cartWidget-qty hide' }>{itemsInCart}</span>
             </Link>
         </div>
-    )
-}
+    );
+};
 
-export default CartWidget
+export default CartWidget;

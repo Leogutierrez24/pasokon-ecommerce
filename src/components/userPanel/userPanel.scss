@@ -1,0 +1,17 @@
+@import '../assets/variables/variables';
+
+.user-panel {
+    width: 100%;
+    height: 100vh;
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.user-panel__container {
+    width: 400px;
+    padding: 15px 20px;
+    height: fit-content;
+    background: #fff;
+}
+
