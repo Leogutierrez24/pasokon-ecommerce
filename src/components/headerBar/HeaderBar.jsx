@@ -12,4 +12,4 @@ function HeaderBar() {
     )
 }
 
-export default HeaderBar
+export default HeaderBar;
