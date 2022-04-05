@@ -7,6 +7,7 @@
     font-family: $text-font;
     display: flex;
     justify-content: center;
+    transition: .3s ease-in-out;
 }
 
 .user-panel__container {
@@ -14,11 +15,35 @@
     padding: 15px 20px;
     height: fit-content;
     background: #fff;
+    display: flex;
 }
 
-.signin-btn {
+.create-account__btn {
+    width: fit-content;
+    margin: 10px 0;
     cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    font-family: $text-font;
+    font-size: 1rem;
     &:hover {
         color: $blue-color;
     }
+}
+
+.panel-col-1, .panel-col-2 {
+    width: 100%;
+    padding-left: 15px;
+}
+
+.panel-col-2 {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: .5s ease-in-out;
+}
+
+.show-form {
+    opacity: 1;
+    transform: translateX(0);
 }

@@ -3,13 +3,11 @@ import { getFirestore } from '../firebase';
 import { collection, addDoc } from 'firebase/firestore';
 import './signinForm.scss';
 
-const SigninForm = (props) => {
+const SigninForm = () => {
     const [inputName, setInputName] = useState('');
     const [inputSurname, setInputSurname] = useState('');
     const [inputMail, setInputMail] = useState('');
     const [inputPassword, setInputPassword] = useState('');
-
-    console.log(props)
 
     const handleName = (e) => {
         setInputName(e.target.value);
@@ -40,9 +38,7 @@ const SigninForm = (props) => {
         const db = getFirestore(); 
         const usersCollection = collection(db, 'users'); //seteo la colección de firebase
 
-        addDoc(usersCollection, user)
-            .then(props.check(true))
-            .catch(console.log('ocurrió un error'));
+        addDoc(usersCollection, user).catch(console.log('ocurrió un error'));
     }
 
     return(
@@ -62,7 +58,7 @@ const SigninForm = (props) => {
                     <input type="password" name="contrasena" id="password" className='signin-input' value={inputPassword} onChange={handlePassword} />
                 </label>
                 <input type="password" name="verif-contrasena" placeholder="Verificá tu contraseña" className='signin-input' />
-                <button onClick={e => createUser(e)}>Crear cuenta</button>
+                <button className='signin-btn' onClick={e => createUser(e)}>Crear cuenta</button>
             </form>
         </div>
     );

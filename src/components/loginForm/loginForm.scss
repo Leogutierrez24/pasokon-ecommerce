@@ -1,9 +1,11 @@
+@import '../assets/variables/variables';
+
 .login-title {
     margin: 0 0 15px 0;
 }
 
 .login-form > form {
-    width: 100%;
+    width: 200px;
     display: flex;
     flex-direction: column;
 }
@@ -12,11 +14,29 @@
     width: 200px;
     height: 25px;
     margin: 5px 0;
+    padding-left: 6px;
     outline: none;
+    border: 1px solid $shadow-color-dark;
+    border-radius: 3px;
+    &:focus-visible {
+        outline: 2px solid $blue-color;
+    }
 }
 
 .login-btn {
     width: fit-content;
-    padding: 5px;
+    height: 30px;
+    padding: 5px 8px;
     cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    color: #fff;
+    background-color: $blue-color;
+    transition: .2s ease-in-out;
+    &:hover {
+        background: #fff;
+        border: 1px solid $blue-color;
+        color: $blue-color;
+        transition: .2s ease-in-out;
+    }
 }
