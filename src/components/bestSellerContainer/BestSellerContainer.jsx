@@ -9,6 +9,7 @@ const BestSellerContainer = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         const db = getFirestore();
         const q = query(collection(db, 'items'), where('subcategory', '==', 'best-seller'));
         getDocs(q).then((snapshot) => {

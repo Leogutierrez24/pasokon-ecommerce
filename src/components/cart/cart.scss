@@ -31,9 +31,8 @@
 
 // detalles de los productos
 .cart-items {
-    width: 85%;
+    width: 100%;
     height: fit-content;
-    margin-bottom: 20px;
     padding: 20px;
     background: #fff;
     border-radius: 10px;
@@ -73,16 +72,21 @@
 }
 
 .remove-btn {
+    width: 16px;
+    height: 16px;
+    padding: 0;
     background: transparent;
     border: none;
     outline: none;
     cursor: pointer;
     color: #ff0000;
+    display: flex;
 }
 
 // resumen del contenido que posee el carrito
 .cart-resume {
     width: 30%;
+    min-width: 220px;
     max-height: 400px;
     padding: 10px;
     background: #fff;

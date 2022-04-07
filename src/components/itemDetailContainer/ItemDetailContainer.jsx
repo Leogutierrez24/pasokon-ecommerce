@@ -11,6 +11,8 @@ function ItemDetailContainer() {
     const { itemId } = useParams();
     
     useEffect(() => {
+        window.scrollTo(0, 0);
+
         const db = getFirestore();
         const q = itemId ? query(collection(db, 'items'), where('id', '==', itemId)) : null;
         getDocs(q).then((snapshot) => {
