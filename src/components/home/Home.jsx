@@ -6,7 +6,7 @@ import './home.scss';
 
 const Home = () => {
     return(
-        <>
+        <div className="Home">
             <div className="banner">
                 <SlideShow />
             </div>
@@ -31,7 +31,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

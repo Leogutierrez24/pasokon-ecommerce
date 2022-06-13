@@ -1,5 +1,9 @@
 @import '../assets/variables/variables';
 
+.Home {
+    min-height: calc(100vh - 234px);
+}
+
 .banner {
     overflow: hidden;
 }
